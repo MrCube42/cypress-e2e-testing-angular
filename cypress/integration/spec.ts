@@ -1,4 +1,4 @@
-it('loads examples', () => {
-  cy.visit('http://localhost:4200');
-  cy.contains('Replace me with something relevant');
+it('smoke test', () => {
+  cy.visit('');
+  cy.contains('cypress-e2e-testing-angular app is running!');
 });
