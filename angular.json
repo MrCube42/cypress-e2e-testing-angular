@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "cypress-e2e-testing-angular": {
@@ -121,8 +121,33 @@
               "devServerTarget": "cypress-e2e-testing-angular:serve:production"
             }
           }
+        },
+        "cypress-run": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
+            "devServerTarget": "cypress-e2e-testing-angular:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "cypress-e2e-testing-angular:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
+            "devServerTarget": "cypress-e2e-testing-angular:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "cypress-e2e-testing-angular:serve:production"
+            }
+          }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "cypress-e2e-testing-angular"
 }
