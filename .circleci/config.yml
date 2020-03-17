@@ -3,18 +3,16 @@ orbs:
   # use Cypress orb from CircleCI registry
   cypress: cypress-io/cypress@1.16.1
 
-executors:
-  mac:
-    macos:
-      xcode: "10.1.0"
-
 jobs:
   e2e:
-    executor: mac
+    executor:
+      name: node/default
     steps:
       - checkout
-      - run: npm install
-      - run: npm run e2e
+      - node/with-cache:
+          steps:
+            - run: npm install
+            - run: npm run e2e
 workflows:
     e2e:
       jobs:
