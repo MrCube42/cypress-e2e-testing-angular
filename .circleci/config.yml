@@ -13,10 +13,8 @@ jobs:
     executor: mac
     steps:
       - checkout
-      - node/with-cache:
-          steps:
-            - run: npm install
-            - run: npm run e2e
+      - run: npm install
+      - run: npm run e2e
 workflows:
     e2e:
       jobs:
