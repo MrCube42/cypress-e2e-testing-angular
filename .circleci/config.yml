@@ -2,10 +2,15 @@ version: 2.1
 orbs:
   # use Cypress orb from CircleCI registry
   cypress: cypress-io/cypress@1.16.1
+
+executors:
+  mac:
+    macos:
+      xcode: "10.1.0"
+
 jobs:
   e2e:
-    executor:
-      name: node/default
+    executor: mac
     steps:
       - checkout
       - node/with-cache:
