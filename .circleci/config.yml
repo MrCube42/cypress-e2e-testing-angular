@@ -5,8 +5,7 @@ orbs:
 
 jobs:
   e2e:
-    executor:
-      name: node/default
+    executor: cypress/browsers-chrome76
     steps:
       - checkout
       - run: npm install
