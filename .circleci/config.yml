@@ -11,9 +11,9 @@ jobs:
       - run: npm run e2e
 
       - store_artifacts:
-        path: /cypress/videos
+          path: cypress\screenshots
       - store_artifacts:
-        path: /cypress/screenshots
+          path: cypress\videos
 
 workflows:
     e2e:
