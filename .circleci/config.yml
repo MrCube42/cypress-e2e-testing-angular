@@ -1,0 +1,22 @@
+version: 2.1
+orbs:
+  cypress: cypress-io/cypress@1.16.1
+
+jobs:
+  e2e:
+    executor: cypress/browsers-chrome76
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run e2e
+
+      - store_artifacts:
+          path: cypress/screenshots
+      - store_artifacts:
+          path: cypress/videos
+
+workflows:
+    e2e:
+      jobs:
+        - e2e
+
