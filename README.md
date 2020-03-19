@@ -1,3 +1,9 @@
+<p align="center" >
+  <a href="https://circleci.com/gh/MrCube42/cypress-e2e-testing-angular">
+    <img src="https://circleci.com/gh/MrCube42/cypress-e2e-testing-angular/tree/master.svg?style=shield" />
+  </a>
+</p>
+
 # CypressE2eTestingAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
