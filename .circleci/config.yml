@@ -1,6 +1,5 @@
 version: 2.1
 orbs:
-  # use Cypress orb from CircleCI registry
   cypress: cypress-io/cypress@1.16.1
 
 jobs:
@@ -10,7 +9,14 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run e2e
+
+      - store_artifacts:
+        path: /cypress/videos
+      - store_artifacts:
+        path: /cypress/screenshots
+
 workflows:
     e2e:
       jobs:
         - e2e
+
