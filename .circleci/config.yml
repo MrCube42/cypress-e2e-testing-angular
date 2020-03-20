@@ -1,22 +1,17 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@1.16.1
-
-jobs:
-  e2e:
-    executor: cypress/browsers-chrome76
-    steps:
-      - checkout
-      - run: npm install
-      - run: npm run e2e
-
-      - store_artifacts:
-          path: cypress/screenshots
-      - store_artifacts:
-          path: cypress/videos
-
+  # This Orb includes the following:
+  # - checkout current repository
+  # - npm install with caching
+  # - start the server
+  # - wait for the server to respond
+  # - run Cypress tests
+  # - store videos and screenshots as artifacts on CircleCI
+  cypress: cypress-io/cypress@1
 workflows:
-    e2e:
-      jobs:
-        - e2e
-
+  build:
+    jobs:
+      - cypress/run:
+          start: npm start
+          wait-on: 'http://localhost:4200'
+          store_artifacts: true
