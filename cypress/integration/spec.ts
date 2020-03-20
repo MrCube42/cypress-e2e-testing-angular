@@ -3,16 +3,12 @@ describe('When Angular starting page is loaded', () => {
     cy.visit('/');
   });
 
-  it('should show the app title', () => {
+  it('has app title, shows proper command by default and reacts on command changes', () => {
     cy.contains('cypress-e2e-testing-angular');
-  });
 
-  it('should show generate component command by default', () => {
-    cy.get('.terminal').contains('ng generate component xyz');
-  });
+    cy.contains('.terminal', 'ng generate component xyz');
 
-  it('should show the proper command when Angular Material is selected', () => {
     cy.contains('Angular Material').click();
-    cy.get('.terminal').contains('ng add @angular/material');
+    cy.contains('.terminal', 'ng add @angular/material');
   });
 });
