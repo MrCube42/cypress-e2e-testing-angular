@@ -1,6 +1,6 @@
 describe('When Angular starting page is loaded', () => {
   beforeEach(() => {
-    cy.visit('');
+    cy.visit('/');
   });
 
   it('should show the app title', () => {
