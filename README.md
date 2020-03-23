@@ -1,3 +1,9 @@
+<p align="center" >
+  <a href="https://circleci.com/gh/MrCube42/cypress-e2e-testing-angular">
+    <img src="https://circleci.com/gh/MrCube42/cypress-e2e-testing-angular/tree/master.svg?style=shield" />
+  </a>
+</p>
+
 # CypressE2eTestingAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
@@ -20,7 +26,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `npm run e2e` to execute the end-to-end tests via [Cypress](http://cypress.io/).
 
 ## Further help
 
